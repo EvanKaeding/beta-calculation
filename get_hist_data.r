@@ -42,9 +42,9 @@ get_hist_data <- function(years, tkr, freq, save){
   
   download.file(link, filename)
   
-  ##Return a data.frame that has the stock history
+  ##Creates a data.frame called 'hist_data'
                             
-  data.frame(read.csv(filename))
+  hist_data <- (data.frame(read.csv(filename)))
   
   ##If the user has made the save argument TRUE, the file won't be deleted
   
@@ -53,5 +53,7 @@ get_hist_data <- function(years, tkr, freq, save){
     file.remove(filename)
     
     }
+  
+  hist_data
   
 }
