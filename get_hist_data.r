@@ -46,5 +46,12 @@ get_hist_data <- function(years, tkr, freq, save){
                             
   data.frame(read.csv(filename))
   
+  ##If the user has made the save argument TRUE, the file won't be deleted
+  
+  if(save==FALSE){
+    
+    file.remove(filename)
+    
+    }
   
 }
