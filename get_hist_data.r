@@ -3,7 +3,7 @@
 ##of years requested, the frequency of reporting and the ticker as arguments, 
 ##downloads a csv and returns the contents of the csv as a data.frame
 
-get_hist_data <- function(years, tkr, freq, save){
+get_hist_data <- function(years, tkr, freq, save=FALSE){
   
   ##date2 represents the date the URL API form
   
@@ -53,6 +53,8 @@ get_hist_data <- function(years, tkr, freq, save){
     file.remove(filename)
     
     }
+  
+  ##Finally, this returns the data as a data.frame
   
   hist_data
   
