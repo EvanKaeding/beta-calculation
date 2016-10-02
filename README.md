@@ -1,5 +1,5 @@
 # beta-calculation
-Uses R to pull stock data from Yahoo Finance and calculate the beta
+A set of functions in R that pull historical stock price data from Yahoo Finance and calculate the of the stock relative to a specified index.
 
 ##Getting started
 

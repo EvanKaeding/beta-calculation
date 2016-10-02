@@ -3,7 +3,7 @@
 ##of years requested, the frequency of reporting and the ticker as arguments, 
 ##downloads a csv and returns the contents of the csv as a data.frame
 
-get_hist_data <- function(years, tkr, freq){
+get_hist_data <- function(years, tkr, freq, save){
   
   ##date2 represents the date the URL API form
   
@@ -34,13 +34,17 @@ get_hist_data <- function(years, tkr, freq){
   
   link <- paste(domain_path, tkr, date1, date2, frequency, tail, sep='')
   
-  ##Download the file and name it "[stock].csv"
+  ##Construct the filename for downloading the data so it reads: "[ticker]-[frequency].csv"
   
-  download.file(link, paste(tkr, "-", freq, ".csv", sep=''))
+  filename <- paste(tkr, "-", freq, ".csv", sep='')
+  
+  ##Download the file and name it
+  
+  download.file(link, filename)
   
   ##Return a data.frame that has the stock history
                             
-  data.frame(read.csv(paste(tkr, "-", freq, ".csv", sep='')))
+  data.frame(read.csv(filename))
   
   
 }
